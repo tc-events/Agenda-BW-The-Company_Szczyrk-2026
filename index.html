@@ -1,0 +1,459 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Business Weekend Szczyrk</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300;1,400&display=swap">
+<style>
+/* Layout: navy brand band (logo + countdown) → sticky section tabs → single 820px column; red square as the only accent motif */
+:root{
+  --navy:#121635; --red:#DC143C; --white:#fff;
+  --bg:#f6f6f9; --surface:#ffffff; --surface-2:#eef0f6; --fg:#121635; --muted:#5b607a; --line:#d9dce8;
+  --shared:#fcecef; --shared-line:#f3c3cd; --chip:#e7e9f2;
+  --band:#121635; --band-fg:#ffffff; --band-muted:#a9adc6;
+  --f:"Roboto",Arial,Helvetica,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b0d20; --surface:#14183a; --surface-2:#1b2048; --fg:#eef0f8; --muted:#a3a8c6; --line:#2a3060;
+  --shared:#2a1530; --shared-line:#5a2238; --chip:#232a58; --band:#0e1130; --band-fg:#fff; --band-muted:#9da2c2; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0b0d20; --surface:#14183a; --surface-2:#1b2048; --fg:#eef0f8; --muted:#a3a8c6; --line:#2a3060;
+  --shared:#2a1530; --shared-line:#5a2238; --chip:#232a58; --band:#0e1130; --band-fg:#fff; --band-muted:#9da2c2; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--band)}
+.wrap{max-width:820px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.sq{display:inline-block;width:.42em;height:.42em;background:var(--red);vertical-align:baseline}
+
+/* hero */
+.hero{background:var(--band);color:var(--band-fg);position:relative;overflow:hidden}
+.hero .wrap{padding-block:22px 26px;position:relative}
+.logo{font-size:22px;letter-spacing:-.01em}
+.logo .t{font-weight:100}.logo .c{font-weight:400}
+.eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--band-muted);margin-top:26px}
+h1{font-weight:100;font-size:clamp(38px,9vw,64px);line-height:1;margin:8px 0 0;letter-spacing:-.02em;text-wrap:balance}
+h1 b{font-weight:500;color:var(--red)}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:14px;color:var(--band-muted);font-size:14px}
+.meta strong{color:var(--band-fg);font-weight:500}
+.brands{margin-top:6px;font-size:13px;color:var(--band-muted)}
+.count{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.count div{border:1px solid rgba(255,255,255,.18);padding:8px 12px;min-width:68px}
+.count b{display:block;font-weight:300;font-size:26px;font-variant-numeric:tabular-nums;line-height:1.1}
+.count span{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--band-muted)}
+.deco{position:absolute;right:-20px;top:24px;width:150px;height:150px;border:2px solid var(--red);opacity:.55;pointer-events:none}
+.deco2{position:absolute;right:46px;top:90px;width:22px;height:22px;background:var(--red);pointer-events:none}
+
+/* tabs */
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--band);border-top:1px solid rgba(255,255,255,.08)}
+.tabs .wrap{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.tabs .wrap::-webkit-scrollbar{display:none}
+.tab{background:none;border:0;color:var(--band-muted);padding:13px 12px 11px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;border-bottom:3px solid transparent;white-space:nowrap}
+.tab[aria-selected="true"]{color:var(--band-fg);border-bottom-color:var(--red)}
+.tab .n{display:inline-block;min-width:18px;padding:0 5px;margin-left:6px;background:var(--red);color:#fff;font-size:11px;letter-spacing:0;border-radius:9px;line-height:18px;text-align:center}
+
+main .wrap{padding-block:24px 64px}
+h2{font-weight:300;font-size:30px;margin:0 0 4px;letter-spacing:-.01em}
+h2+.lead{color:var(--muted);margin:0 0 20px}
+.sec-h{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+
+/* controls */
+.seg{display:inline-flex;background:var(--surface-2);padding:3px;gap:3px;flex-wrap:wrap}
+.seg button{border:0;background:none;padding:8px 14px;font-size:13px;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--navy);color:#fff}
+:root[data-theme="dark"] .seg button[aria-pressed="true"]{background:var(--red)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .seg button[aria-pressed="true"]{background:var(--red)}}
+.days{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0 6px}
+.day{border:1px solid var(--line);background:var(--surface);padding:10px 12px;text-align:left;display:flex;align-items:baseline;gap:10px}
+.day b{font-size:30px;font-weight:300;line-height:1;font-variant-numeric:tabular-nums}
+.day span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.day[aria-pressed="true"]{border-color:var(--navy);box-shadow:inset 0 -3px 0 var(--red)}
+:root[data-theme="dark"] .day[aria-pressed="true"]{border-color:var(--fg)}
+.daynote{font-size:13px;color:var(--muted);margin:10px 0 14px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.lg{display:inline-flex;align-items:center;gap:6px}
+.lg i{width:10px;height:10px;display:inline-block}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:84px;top:6px;bottom:6px;width:1px;background:var(--line)}
+.row{display:grid;grid-template-columns:72px 1fr;gap:24px;position:relative;padding:5px 0}
+.time{font-size:12px;font-weight:500;font-variant-numeric:tabular-nums;color:var(--muted);text-align:right;padding-top:2px;line-height:1.3}
+.time small{display:block;font-weight:400;opacity:.8}
+.row::after{content:"";position:absolute;left:81px;top:10px;width:7px;height:7px;border:1px solid var(--muted);background:var(--bg);border-radius:50%}
+.row.prog::after{background:var(--navy);border-color:var(--navy);width:9px;height:9px;left:80px;top:9px}
+.row.sh::after{background:var(--red);border-color:var(--red)}
+.row.sh .time{color:var(--red)}
+.lite{font-size:14px;color:var(--fg);font-weight:500;padding-top:1px}
+.lite.dim{color:var(--muted);font-weight:400;font-style:italic}
+.card{background:var(--surface);border:1px solid var(--line);position:relative;padding:12px 40px 12px 14px;min-width:0;text-align:left;width:100%}
+.row.sh .card{background:var(--shared);border-color:var(--shared-line)}
+.card::before{content:"";position:absolute;left:-1px;top:-1px;width:12px;height:12px;border-left:2px solid var(--red);border-top:2px solid var(--red)}
+.card::after{content:"";position:absolute;right:-1px;bottom:-1px;width:12px;height:12px;border-right:2px solid var(--fg);border-bottom:2px solid var(--fg)}
+.tag{display:inline-block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;background:var(--navy);color:#fff;padding:2px 7px;font-weight:500}
+.tag.r{background:var(--red)}
+.card h3{font-size:17px;font-weight:500;margin:6px 0 2px;line-height:1.3;text-wrap:balance}
+.card .sub{font-style:italic;color:var(--muted);font-size:13.5px;margin:0}
+.who{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.who button,.pl{background:none;border:0;padding:0;text-align:left}
+.who b,.pl b{display:block;font-size:13.5px;font-weight:500}
+.who span,.pl span{font-size:12px;color:var(--muted)}
+.who button:hover b{color:var(--red)}
+.mod{margin-top:8px;font-size:12px}
+.mod em{font-style:normal;letter-spacing:.16em;text-transform:uppercase;color:var(--red);font-weight:500;font-size:10px;margin-right:6px}
+.star{position:absolute;right:6px;top:6px;width:30px;height:30px;border:0;background:none;display:grid;place-items:center;color:var(--muted)}
+.star svg{width:17px;height:17px}
+.star[aria-pressed="true"]{color:var(--red)}
+.star[aria-pressed="true"] path{fill:currentColor}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.choice button{background:var(--surface-2);border:1px solid var(--line);border-top:2px solid var(--red);padding:10px;text-align:left}
+.choice b{display:block;font-size:14px;font-weight:500}
+.choice span{font-size:12px;color:var(--muted)}
+.choice button:hover{border-color:var(--red)}
+.rooms{display:grid;gap:6px;margin-top:10px}
+.room{display:grid;grid-template-columns:28px 1fr;gap:6px;background:var(--surface-2);padding:8px 10px}
+.room>i{font-style:normal;color:var(--red);font-weight:700;font-size:14px}
+.room b{font-size:13.5px;font-weight:500;display:block}
+.room span{font-size:12px;color:var(--muted)}
+.link{background:none;border:0;padding:0;color:var(--red);font-size:13px;font-weight:500;margin-top:8px}
+.empty{padding:28px 18px;border:1px dashed var(--line);text-align:center;color:var(--muted)}
+
+/* speakers */
+.search{width:100%;padding:12px 14px;border:1px solid var(--line);background:var(--surface);color:var(--fg);font:inherit;margin-bottom:12px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.chips button{border:1px solid var(--line);background:var(--surface);padding:6px 12px;font-size:12px;letter-spacing:.06em}
+.chips button[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.sp{background:var(--surface);border:1px solid var(--line);padding:14px;display:flex;gap:12px;min-width:0;text-align:left}
+.ini{flex:none;width:44px;height:44px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:300;font-size:16px;position:relative}
+.ini::after{content:"";position:absolute;right:-4px;top:-4px;width:9px;height:9px;background:var(--red)}
+.sp h4{margin:0;font-size:15px;font-weight:500}
+.sp .co{font-size:12.5px;color:var(--muted)}
+.sp ul{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:4px}
+.sp li{font-size:12px;line-height:1.35}
+.sp li i{font-style:normal;color:var(--red);font-variant-numeric:tabular-nums;margin-right:4px}
+.partners{margin-top:22px;font-size:13px;color:var(--muted)}
+.partners b{color:var(--fg);font-weight:500}
+
+/* activities */
+.acts{display:grid;gap:12px}
+.act{background:var(--surface);border:1px solid var(--line);display:grid;grid-template-columns:120px 1fr;min-width:0}
+.act .when{background:var(--band);color:var(--band-fg);padding:14px;display:flex;flex-direction:column;justify-content:space-between;gap:10px}
+.act .when b{font-size:34px;font-weight:300;line-height:1}
+.act .when span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--band-muted)}
+.act .when em{font-style:normal;font-size:13px;font-variant-numeric:tabular-nums}
+.act .body{padding:14px 16px;min-width:0}
+.act h3{margin:6px 0 2px;font-size:20px;font-weight:400}
+.act p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.act .body .link{display:inline-block}
+.detail{margin-top:12px;border-top:1px solid var(--line);padding-top:12px;display:grid;gap:14px}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.feat b{display:block;font-size:13.5px;font-weight:500}
+.feat span{font-size:12.5px;color:var(--muted)}
+.feat i{font-style:normal;color:var(--red);font-size:11px;letter-spacing:.14em;font-weight:500}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.stats div{background:var(--surface-2);padding:8px 10px}
+.stats b{display:block;font-size:20px;font-weight:300}
+.stats span{font-size:11px;color:var(--muted)}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.steps li{display:grid;grid-template-columns:52px 1fr;font-size:13.5px}
+.steps li i{font-style:normal;font-variant-numeric:tabular-nums;color:var(--red);font-weight:500}
+.note{font-size:12px;color:var(--muted);border-left:2px solid var(--red);padding-left:10px}
+.h5{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:0 0 6px}
+
+/* about */
+.about{display:grid;gap:14px}
+.box{background:var(--surface);border:1px solid var(--line);padding:18px}
+.navybox{background:var(--band);color:var(--band-fg);padding:22px;position:relative}
+.navybox::before{content:"";display:block;width:26px;height:4px;background:var(--red);margin-bottom:14px}
+.navybox h3{font-weight:500;font-size:24px;margin:0 0 8px;line-height:1.2}
+.navybox p{color:var(--band-muted);margin:0;max-width:60ch}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.kv div span{display:block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.kv div b{font-weight:400;font-size:16px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.two .box h3{margin:0 0 6px;font-weight:400;font-size:20px}
+.two .box p{margin:0 0 10px;color:var(--muted);font-size:14px}
+.two ul{margin:0;padding-left:18px;font-size:14px}
+.hl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.hl div{background:var(--surface);border:1px solid var(--line);padding:14px}
+.hl b{display:block;font-size:34px;font-weight:100;line-height:1;font-variant-numeric:tabular-nums}
+.hl span{font-size:12.5px;color:var(--muted)}
+
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+footer .wrap{padding-block:18px 28px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--navy);color:#fff;padding:10px 16px;font-size:13px;z-index:20;border-left:3px solid var(--red)}
+
+@media (max-width:560px){
+  .tl::before{left:58px}.row{grid-template-columns:48px 1fr;gap:20px}.row::after{left:55px}.row.prog::after{left:54px}
+  .time{font-size:11px}.who{grid-template-columns:1fr}.choice{grid-template-columns:1fr}
+  .act{grid-template-columns:1fr}.act .when{flex-direction:row;align-items:center}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:1fr}
+  .day b{font-size:24px}.day{flex-direction:column;gap:2px}
+}
+@media (prefers-reduced-motion:no-preference){.card,.sp,.act{transition:border-color .15s}}
+</style>
+
+<header class="hero">
+  <div class="deco" aria-hidden="true"></div><div class="deco2" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="logo"><span class="t">the</span> <span class="c">company</span><span class="sq"></span></div>
+    <div class="eyebrow">Pierwsza wspólna edycja Corporate Connections × BNI+</div>
+    <h1>Business <b>Weekend</b><br>Szczyrk</h1>
+    <div class="meta"><span><strong>6–8 listopada 2026</strong></span><span>Mercure Hotel Szczyrk Resort</span></div>
+    <div class="count" id="count" aria-live="polite"></div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sekcje">
+  <div class="wrap" role="tablist">
+    <button class="tab" role="tab" data-v="agenda">Agenda</button>
+    <button class="tab" role="tab" data-v="moja">Moja agenda<span class="n" id="mycount" hidden></span></button>
+    <button class="tab" role="tab" data-v="prelegenci">Prelegenci</button>
+    <button class="tab" role="tab" data-v="aktywnosci">Aktywności</button>
+    <button class="tab" role="tab" data-v="o-evencie">O evencie</button>
+  </div>
+</nav>
+
+<main><div class="wrap" id="view"></div></main>
+<footer><div class="wrap"><span>The Company · Business Weekend Szczyrk · 6–8.11.2026</span><span>Godziny orientacyjne, program może ulec zmianie.</span></div></footer>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const P=(n,c)=>({n,c});
+// t: b = Agenda biznesowa, a = Akademia Rozwoju. k: log | prog
+const S=[
+ // PIĄTEK
+ {d:6,s:'10:00',e:'12:00',t:'ba',k:'log',title:'Rejestracja, networking'},
+ {d:6,s:'11:00',e:'12:00',t:'b',k:'log',title:'Jak wyciągnąć najwięcej wartości z Business Weekendu?'},
+ {d:6,s:'12:00',e:'13:15',t:'ba',k:'log',title:'Lunch'},
+ {d:6,s:'13:15',e:'13:30',t:'a',k:'log',title:'Rozpoczęcie Akademii Rozwoju'},
+ {d:6,s:'13:15',e:'15:15',t:'b',k:'prog',id:'f1',type:'Networking',title:'Spotkania 1 na 1',sub:'Moderowane przez Zespół CC i BNI+'},
+ {d:6,s:'13:30',e:'15:15',t:'a',k:'prog',id:'f2',type:'Doświadczenie',title:'The Art of Heritage',sub:'Koniaków Craftsmanship × Moët Hennessy',act:'heritage'},
+ {d:6,s:'15:15',e:'15:45',t:'ba',k:'log',title:'Przerwa kawowa i networking'},
+ {d:6,s:'15:45',e:'16:10',t:'ba',k:'prog',id:'f3',type:'Otwarcie',title:'Otwarcie Business Weekendu The Company w Szczyrku'},
+ {d:6,s:'16:15',e:'17:15',t:'ba',k:'prog',id:'f4',type:'Panel dyskusyjny',title:'Moment przełomu',sub:'Co naprawdę pozwala firmie wejść na kolejny poziom?',
+   people:[P('Artur Beck','United'),P('Przemysław Krych','Cornerstone IM'),P('Jakub Nowak','JNT Group'),P('Piotr Witek','Moore Polska')],mod:P('Dawid Pyszniak','Compass&Partners')},
+ {d:6,s:'17:15',e:'17:45',t:'ba',k:'log',title:'Przerwa kawowa'},
+ {d:6,s:'17:45',e:'18:25',t:'ba',k:'prog',id:'f5',type:'Wystąpienie',title:'Employee Driven Organization',sub:'Firma, w której ludzie napędzają wyniki',people:[P('dr Mateusz Grzesiak','')]},
+ {d:6,s:'18:30',e:'19:55',t:'ba',k:'log',dim:1,title:'Czas wolny'},
+ {d:6,s:'19:55',e:'20:25',t:'ba',k:'log',title:'Networking'},
+ {d:6,s:'20:30',e:'23:30',t:'ba',k:'prog',id:'f6',type:'Wieczór',title:'Kolacja powitalna'},
+ // SOBOTA
+ {d:7,s:'07:30',e:'09:55',t:'ba',k:'log',title:'Śniadanie'},
+ {d:7,s:'08:00',e:'09:00',t:'ba',k:'prog',id:'s1',type:'Poranek',title:'Poranek Mistrzów by OSHEE',sub:'Trening z Mateuszem Gamrotem, zawodnikiem UFC',act:'oshee',people:[P('Mateusz Gamrot','zawodnik UFC')]},
+ {d:7,s:'10:00',e:'12:00',t:'b',k:'prog',id:'s2',type:'Networking',title:'Spotkania 1 na 1'},
+ {d:7,s:'10:00',e:'11:25',t:'a',k:'prog',id:'s2a',type:'Networking',title:'Spotkania 1 na 1'},
+ {d:7,s:'11:25',e:'11:40',t:'a',k:'log',dim:1,title:'Przerwa kawowa'},
+ {d:7,s:'11:40',e:'12:25',t:'a',k:'prog',id:'s3',type:'Wystąpienie',title:'Każdy krok na wagę złota',sub:'Jak zamieniać długoterminowy cel w codzienną konsekwencję?',people:[P('Robert Korzeniowski','')]},
+ {d:7,s:'12:00',e:'12:30',t:'b',k:'log',dim:1,title:'Przerwa kawowa'},
+ {d:7,s:'12:25',e:'13:10',t:'a',k:'prog',id:'s4',type:'Wystąpienie',title:'Od zasięgu do wyniku',sub:'Jak budować markę osobistą, która wspiera biznes?',people:[P('Dominika Żak','')]},
+ {d:7,s:'12:30',e:'13:00',t:'b',k:'prog',id:'s5',type:'Wystąpienie specjalne',title:'prof. Witold Orłowski',sub:'Nowa mapa ryzyka i wzrostu: jak zmieni się otoczenie polskiego biznesu w 2027?',people:[P('prof. Witold Orłowski','')]},
+ {d:7,s:'13:00',e:'13:10',t:'b',k:'log',title:'Q&A'},
+ {d:7,s:'13:15',e:'14:00',t:'ba',k:'prog',id:'s6',type:'Debata',title:'Poza dotychczasową skalę',sub:'Jak rosnąć na nowych rynkach i nie stracić kontroli nad firmą?',
+   people:[P('Beata Drzazga','Betamed'),P('Ewald Raben','Raben Group'),P('Adam Rudowski','Level 2'),P('Michał Wypychewicz','Koronea Family Office')]},
+ {d:7,s:'14:00',e:'15:30',t:'ba',k:'log',title:'Lunch'},
+ {d:7,s:'15:35',e:'16:30',t:'ba',k:'prog',id:'s7',type:'Panel dyskusyjny',title:'Mecz o wszystko',sub:'Jak zarządzać wynikiem, gdy presja nigdy nie znika?',
+   people:[P('Agnieszka Radwańska','Mincer Group'),P('Grzegorz Rożalski','Emotivo'),P('Piotr Więckowski','Orlen Oil Motor Lublin'),P('Mariusz Wójcicki','Mincer Group/Canexpol')],mod:P('Robert Korzeniowski','')},
+ {d:7,s:'16:35',e:'17:00',t:'b',k:'prog',id:'s8',type:'Debata',title:'Kupować, sprzedawać, przekazywać?',sub:'Zmiany właścicielskie w polskim biznesie',people:[P('Wawrzyniec Rajchel','SPCG'),P('Paweł Gos','Exact x Forestall')]},
+ {d:7,s:'16:35',e:'18:30',t:'a',k:'prog',id:'s9',type:'Masterclass perfum',title:'Scent Lab by MO61',sub:'Komponowanie własnego, unikalnego zapachu pod okiem eksperta, ze składników najwyższej jakości.',act:'scent'},
+ {d:7,s:'17:00',e:'17:15',t:'b',k:'log',dim:1,title:'Przerwa kawowa'},
+ {d:7,s:'17:20',e:'18:00',t:'b',k:'prog',id:'s10',type:'Debata',title:'Think Tank The Company'},
+ {d:7,s:'18:05',e:'18:25',t:'b',k:'prog',id:'s11',type:'Wystąpienie',title:'Energia lidera na lata',sub:'Zdrowowieczność bez biohackingu i mitów',people:[P('Jakub Swadźba','')]},
+ {d:7,s:'18:30',e:'20:45',t:'ba',k:'log',dim:1,title:'Czas wolny, networking i integracja'},
+ {d:7,s:'20:45',e:'21:00',t:'ba',k:'log',title:'Networking'},
+ {d:7,s:'21:00',e:'00:15',t:'ba',k:'prog',id:'s12',type:'Wieczór',title:'Uroczysta kolacja'},
+ {d:7,s:'00:15',e:'02:45',t:'ba',k:'prog',id:'s13',type:'Wieczór',title:'Afterparty'},
+ // NIEDZIELA
+ {d:8,s:'07:00',e:'10:00',t:'ba',k:'log',title:'Śniadanie'},
+ {d:8,s:'08:00',e:'10:00',t:'ba',k:'prog',id:'n1',type:'Opcjonalnie · do wyboru',title:'Poranna aktywność',choice:['mountain','mercedes']},
+ {d:8,s:'10:15',e:'10:45',t:'ba',k:'prog',id:'n2',type:'Relacje w biznesie',title:'Siła, której nie zbudujesz sam',sub:'Dlaczego najlepsi rosną w społeczności',people:[P('dr Mateusz Grzesiak','')]},
+ {d:8,s:'10:45',e:'11:15',t:'ba',k:'prog',id:'n3',type:'Zamknięcie',title:'Wartość, która zostaje',sub:'Społeczność po Business Weekendzie'},
+ {d:8,s:'11:15',e:'12:25',t:'ba',k:'prog',id:'n4',type:'Breakout rooms',title:'Trzy sale tematyczne',rooms:[
+   {r:'I',title:'Cyberbezpieczeństwo i NIS2: obowiązek zarządu, nie działu IT',people:[P('Wojciech Buczkowski','Komputronik'),P('Jacek Węgrzyk','IT Punkt')],orgs:['Pekao SA']},
+   {r:'II',title:'Nowelizacja PIP',people:[P('Róża Szafranek','HR Hints')],orgs:['EY']},
+   {r:'III',title:'AI w firmie',people:[P('Artur Banach','Movens Capital'),P('Tomasz Skowronek','4K Development'),P('Radosław Putek','Webcon')],orgs:['Google/FOTC']}]},
+ {d:8,s:'12:30',e:'15:30',t:'ba',k:'log',title:'Lunch i networking'},
+];
+
+const ACTS={
+ mountain:{d:8,day:'Niedziela 8.11',time:'8:10–10:10',tag:'Format VIP',title:'Mountain Morning',lead:'Beskidzki poranek ponad miastem. Kameralny wjazd gondolą na Halę Skrzyczeńską: panorama Beskidów, kawa lub grzane wino i rozmowy w gronie przedsiębiorców, z dala od konferencyjnego zgiełku.',
+   feats:[['Prywatny wjazd gondolą','10-osobowa gondola A1 zabiera nas na Halę Skrzyczeńską, ok. 1000 m n.p.m. Wjazd zarezerwowany dla naszej grupy.'],['Kawa z widokiem w Kuflonce','Kawa lub grzane wino do wyboru, opcje bezalkoholowe i drobne przekąski w restauracji Kuflonka.'],['Rozmowy w wąskim gronie','Gospodarz CC / BNI+ przedstawia gości sobie nawzajem. Bez wystąpień i ćwiczeń integracyjnych, tylko rozmowy.']],
+   stats:[['8:10','zbiórka w lobby Mercure'],['~1000','m n.p.m.'],['2 h','z powrotem przed sesją'],['0%','opcje bezalkoholowe']],
+   steps:[['8:10','Zbiórka w lobby Mercure'],['8:40','Wjazd gondolą na Halę Skrzyczeńską'],['8:55','Kawa lub grzane wino i networking w Kuflonce'],['9:25','Zdjęcie grupowe z panoramą Beskidów'],['10:10','Powrót busami do Mercure']],
+   bring:'Ciepła odzież i stabilne obuwie.',
+   reg:'Liczba miejsc ograniczona. Zapisy u organizatora, decyduje kolejność zgłoszeń. Potwierdzenie do soboty 7.11, godz. 18:00.',
+   note:'Realizacja zależy od potwierdzenia operatora gondoli, restauracji i warunków pogodowych. Przy niekorzystnej pogodzie zapraszamy na Mountain Coffee & Talks w Mercure.'},
+ mercedes:{d:8,day:'Niedziela 8.11',time:'8:30–10:00',tag:'Format VIP',title:'Mercedes Off Road 4×4',lead:'Beskidzki poranek w terenie. Poranna wyprawa terenowymi Mercedesami 4×4: beskidzkie stoki, adrenalina i widoki, a do tego rozmowy w gronie przedsiębiorców.',
+   feats:[['Mercedes 4×4 w terenie','Terenowe Mercedesy z napędem 4×4 i trasa przez beskidzki teren, której nie pokonuje się zwykłym autem.'],['Beskidy z innej perspektywy','Poranek na stokach wokół Szczyrku: podjazdy, zjazdy i widoki, które zobaczymy tylko z tej trasy.'],['Rozmowy w wąskim gronie','Kameralna grupa przedsiębiorców CC / BNI+. Wspólna przygoda to dobry początek rozmów, które trwają dłużej niż weekend.']],
+   stats:[['8:30','zbiórka w lobby Mercure'],['4×4','terenowe Mercedesy'],['90 min','z powrotem przed sesją'],['VIP','kameralna grupa']],
+   steps:[['8:30','Zbiórka w lobby Mercure i odprawa'],['8:45','Wyjazd na trasę terenową'],['9:00','Przejazd Mercedesami 4×4 przez Beskidy'],['9:45','Zdjęcie grupowe na trasie'],['10:00','Powrót do Mercure']],
+   bring:'Ciepła odzież i wygodne obuwie, które może się ubrudzić.',
+   reg:'Liczba miejsc ograniczona. Zapisy u organizatora, decyduje kolejność zgłoszeń. Potwierdzenie do soboty 7.11, godz. 18:00.',
+   note:'Realizacja zależy od potwierdzenia partnera i warunków pogodowych. Szczegóły trasy i zasady udziału przekażemy uczestnikom przed wyjazdem.'},
+ oshee:{d:7,day:'Sobota 7.11',time:'8:00–9:00',tag:'Obie agendy',title:'Poranek Mistrzów by OSHEE',lead:'Poranny trening z Mateuszem Gamrotem, zawodnikiem UFC. Start dnia przed spotkaniami 1 na 1.'},
+ heritage:{d:6,day:'Piątek 6.11',time:'13:30–15:15',tag:'Akademia Rozwoju',title:'The Art of Heritage',lead:'Koniaków Craftsmanship × Moët Hennessy. Spotkanie z rzemiosłem i dziedzictwem marek premium, otwierające program Akademii Rozwoju.'},
+ scent:{d:7,day:'Sobota 7.11',time:'16:35–18:30',tag:'Akademia Rozwoju · Masterclass',title:'Scent Lab by MO61',lead:'Niszowe doświadczenie: komponowanie własnego, unikalnego zapachu pod okiem eksperta, z użyciem składników najwyższej jakości.'},
+};
+const ACT_ORDER=['mountain','mercedes','oshee','heritage','scent'];
+const DAYN={6:'Piątek',7:'Sobota',8:'Niedziela'};
+
+// state
+const st={view:'agenda',track:'b',day:6,role:'all',q:'',open:null};
+let fav=new Set();
+try{fav=new Set(JSON.parse(localStorage.getItem('bw-fav')||'[]'));st.track=localStorage.getItem('bw-track')||'b'}catch(e){}
+const save=()=>{try{localStorage.setItem('bw-fav',JSON.stringify([...fav]));localStorage.setItem('bw-track',st.track)}catch(e){}};
+
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const mins=t=>{let[h,m]=t.split(':').map(Number);if(h<5)h+=24;return h*60+m};
+const ses=(d,tr)=>S.filter(x=>x.d===d&&(!tr||x.t.includes(tr))).sort((a,b)=>mins(a.s)-mins(b.s));
+const shared=x=>x.t==='ba';
+const starSvg='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>';
+
+function personBtns(arr){return arr.map(p=>`<button data-person="${esc(p.n)}"><b>${esc(p.n)}</b>${p.c?`<span>${esc(p.c)}</span>`:''}</button>`).join('')}
+
+function cardHTML(x){
+  const tagCls=/Panel|Debata|Breakout|Opcjonalnie/.test(x.type)?'tag r':'tag';
+  let h=`<div class="card"><span class="${tagCls}">${esc(x.type)}</span><h3>${esc(x.title)}</h3>${x.sub?`<p class="sub">${esc(x.sub)}</p>`:''}`;
+  if(x.people&&x.people.length) h+=`<div class="who">${personBtns(x.people)}</div>`;
+  if(x.mod) h+=`<div class="mod"><em>Moderacja</em><b>${esc(x.mod.n)}</b>${x.mod.c?` <span style="color:var(--muted)">${esc(x.mod.c)}</span>`:''}</div>`;
+  if(x.rooms) h+=`<div class="rooms">${x.rooms.map(r=>`<div class="room"><i>${r.r}</i><div><b>${esc(r.title)}</b><span>${[...r.people.map(p=>`${p.n} (${p.c})`),...r.orgs].map(esc).join(' · ')}</span></div></div>`).join('')}</div>`;
+  if(x.choice) h+=`<div class="choice">${x.choice.map(k=>`<button data-act="${k}"><b>${esc(ACTS[k].title)}</b><span>${esc(ACTS[k].time)} · szczegóły</span></button>`).join('')}</div>`;
+  if(x.act) h+=`<button class="link" data-act="${x.act}">Szczegóły aktywności →</button>`;
+  h+=`<button class="star" data-fav="${x.id}" aria-pressed="${fav.has(x.id)}" aria-label="${fav.has(x.id)?'Usuń z':'Dodaj do'} mojej agendy">${starSvg}</button></div>`;
+  return h;
+}
+function rowHTML(x,showShared=true){
+  const sh=showShared&&shared(x)&&x.k==='prog';
+  const t=`<div class="time">${x.s}<small>${x.e}</small></div>`;
+  if(x.k==='log') return `<li class="row">${t}<div class="lite${x.dim?' dim':''}">${esc(x.title)}</div></li>`;
+  return `<li class="row prog${sh?' sh':''}">${t}${cardHTML(x)}</li>`;
+}
+
+function vAgenda(){
+  const sun=st.day===8;
+  const list=ses(st.day,sun?null:st.track);
+  const progN=list.filter(x=>x.k==='prog').length;
+  return `<div class="sec-h"><div><h2>Agenda</h2><p class="lead" style="margin:0">${sun?'Niedziela to agenda wspólna dla obu społeczności.':'Dwie agendy w piątek i sobotę, wspólna niedziela.'}</p></div>
+   <div class="seg" role="group" aria-label="Wybór agendy">
+     <button data-track="b" aria-pressed="${st.track==='b'}">Agenda biznesowa</button>
+     <button data-track="a" aria-pressed="${st.track==='a'}">Akademia Rozwoju</button></div></div>
+   <div class="days" role="group" aria-label="Dzień">${[6,7,8].map(d=>`<button class="day" data-day="${d}" aria-pressed="${st.day===d}"><b>0${d}</b><span>${DAYN[d]}</span></button>`).join('')}</div>
+   <div class="daynote">${sun?'<span><b style="color:var(--fg);font-weight:500">Agenda wspólna</b> · BNI+ i Corporate Connections razem</span>':
+     `<span>${progN} punktów programu</span><span class="lg"><i style="background:var(--red)"></i>sesja wspólna z ${st.track==='b'?'Akademią Rozwoju':'agendą biznesową'}</span><span class="lg"><i style="background:var(--navy);border:1px solid var(--line)"></i>tylko ta agenda</span>`}<span class="lg">${starSvg.replace('<svg','<svg style="width:13px;height:13px"')} dodaj do mojej agendy</span></div>
+   <ol class="tl">${list.map(x=>rowHTML(x,!sun)).join('')}</ol>`;
+}
+
+function vMoja(){
+  const picked=S.filter(x=>fav.has(x.id));
+  if(!picked.length) return `<h2>Moja agenda</h2><p class="lead">Twój osobisty plan weekendu.</p>
+   <div class="empty">Nic tu jeszcze nie ma. Otwórz <button class="link" data-go="agenda" style="margin:0">Agendę</button> i oznacz gwiazdką sesje, na które chcesz pójść. Zapisują się w tej przeglądarce.</div>`;
+  let h=`<h2>Moja agenda</h2><p class="lead">${picked.length} ${picked.length===1?'sesja':picked.length<5?'sesje':'sesji'} w Twoim planie, z obu agend.</p>`;
+  [6,7,8].forEach(d=>{const l=picked.filter(x=>x.d===d).sort((a,b)=>mins(a.s)-mins(b.s));if(!l.length)return;
+    // clash detection
+    const clash=new Set();for(let i=0;i<l.length;i++)for(let j=i+1;j<l.length;j++)if(mins(l[j].s)<mins(l[i].e))clash.add(l[i].id),clash.add(l[j].id);
+    h+=`<div class="h5" style="margin-top:22px">0${d} · ${DAYN[d]}</div><ol class="tl">${l.map(x=>{let r=rowHTML(x,false);if(clash.has(x.id))r=r.replace('<div class="card">','<div class="card"><span class="tag r" style="float:right;margin-right:22px">Kolizja godzin</span>');return r}).join('')}</ol>`});
+  return h;
+}
+
+function people(){
+  const m=new Map();
+  const add=(p,role,x,room)=>{if(!m.has(p.n))m.set(p.n,{n:p.n,c:p.c,roles:new Set(),s:[]});const o=m.get(p.n);if(p.c&&!o.c)o.c=p.c;o.roles.add(role);o.s.push({d:x.d,s:x.s,title:room||x.title,id:x.id})};
+  S.forEach(x=>{
+    (x.people||[]).forEach(p=>add(p,/Panel|Debata/.test(x.type)?'panel':'speaker',x));
+    if(x.mod)add(x.mod,'mod',x);
+    (x.rooms||[]).forEach(r=>r.people.forEach(p=>add(p,'room',x,'Breakout: '+r.title)));
+  });
+  return [...m.values()].sort((a,b)=>a.n.replace(/^(dr|prof\.) /,'').split(' ').pop().localeCompare(b.n.replace(/^(dr|prof\.) /,'').split(' ').pop(),'pl'));
+}
+function vPrelegenci(){
+  const all=people();const q=st.q.trim().toLowerCase();
+  const roleOk=p=>st.role==='all'||p.roles.has(st.role);
+  const l=all.filter(p=>roleOk(p)&&(!q||(p.n+' '+p.c+' '+p.s.map(s=>s.title).join(' ')).toLowerCase().includes(q)));
+  const ini=n=>n.replace(/^(dr|prof\.) /,'').split(' ').map(w=>w[0]).slice(0,2).join('');
+  const chips=[['all','Wszyscy'],['speaker','Wystąpienia'],['panel','Panele i debaty'],['mod','Moderacja'],['room','Breakout rooms']];
+  return `<h2>Prelegenci</h2><p class="lead">${all.length} osób na scenie i w salach tematycznych. Dotknij sesji, by zobaczyć ją w agendzie.</p>
+   <input class="search" id="q" type="search" placeholder="Szukaj osoby, firmy lub tematu" value="${esc(st.q)}" aria-label="Szukaj prelegentów">
+   <div class="chips" role="group" aria-label="Rola">${chips.map(([k,v])=>`<button data-role="${k}" aria-pressed="${st.role===k}">${v}</button>`).join('')}</div>
+   ${l.length?`<div class="grid">${l.map(p=>`<div class="sp"><div class="ini" aria-hidden="true">${esc(ini(p.n))}</div><div style="min-width:0"><h4>${esc(p.n)}</h4>${p.c?`<div class="co">${esc(p.c)}</div>`:''}
+     <ul>${p.s.map(s=>`<li><button class="link" style="margin:0;color:var(--fg);font-weight:400;text-align:left" data-goto="${s.id}"><i>${['','','','','','','Pt','Sb','Nd'][s.d]} ${s.s}</i>${esc(s.title)}</button></li>`).join('')}</ul></div></div>`).join('')}</div>`
+     :`<div class="empty">Brak wyników dla „${esc(st.q)}”.</div>`}
+   <div class="partners"><b>Partnerzy merytoryczni breakout rooms:</b> Pekao SA · EY · Google/FOTC</div>`;
+}
+
+function vAkt(){
+  return `<h2>Aktywności</h2><p class="lead">Doświadczenia poza salą konferencyjną. W niedzielę rano wybierasz jedną z dwóch opcji VIP.</p>
+   <div class="acts">${ACT_ORDER.map(k=>{const a=ACTS[k];const open=st.open===k;
+    return `<article class="act" id="act-${k}"><div class="when"><div><b>0${a.d}</b></div><div><span>${esc(a.day)}</span><br><em>${esc(a.time)}</em></div></div>
+     <div class="body"><span class="tag${a.d===8?' r':''}">${esc(a.tag)}</span><h3>${esc(a.title)}</h3><p>${esc(a.lead)}</p>
+     ${a.feats?`<button class="link" data-toggle="${k}" aria-expanded="${open}">${open?'Zwiń szczegóły':'Program i szczegóły →'}</button>`:''}
+     ${a.feats&&open?`<div class="detail">
+       <div class="stats">${a.stats.map(([b,s])=>`<div><b>${esc(b)}</b><span>${esc(s)}</span></div>`).join('')}</div>
+       <div class="feats">${a.feats.map(([b,s],i)=>`<div class="feat"><i>0${i+1}</i><b>${esc(b)}</b><span>${esc(s)}</span></div>`).join('')}</div>
+       <div><p class="h5">Przebieg poranka</p><ol class="steps">${a.steps.map(([t,s])=>`<li><i>${t}</i>${esc(s)}</li>`).join('')}<li><i>10:15</i>Sesja wspólna konferencji</li></ol></div>
+       <div><p class="h5">Warto zabrać</p><div style="font-size:14px">${esc(a.bring)}</div></div>
+       <div class="box" style="padding:12px;border-color:var(--red)"><b style="font-weight:500">Zarezerwuj miejsce.</b> <span style="font-size:14px">${esc(a.reg)}</span></div>
+       <div class="note">${esc(a.note)} Godziny orientacyjne.</div></div>`:''}
+     </div></article>`}).join('')}</div>`;
+}
+
+function vAbout(){
+  const nProg=S.filter(x=>x.k==='prog').length, nPeople=people().length;
+  return `<div class="about">
+   <div class="navybox"><h3>Dwie społeczności.<br>Jedno wydarzenie.</h3><p>Pierwsza wspólna edycja Business Weekendu Corporate Connections i BNI+. Przez dwa dni przedsiębiorcy realizują równoległe programy, a w niedzielę spotykają się, by pogłębiać relacje, wymieniać doświadczenia i odkrywać nowe możliwości współpracy.</p></div>
+   <div class="box kv"><div><span>Termin</span><b>6–8 listopada 2026</b></div><div><span>Miejsce</span><b>Mercure Hotel Szczyrk Resort</b></div><div><span>Organizator</span><b>The Company</b></div><div><span>Społeczności</span><b>Corporate Connections · BNI+</b></div></div>
+   <div class="hl"><div><b>3</b><span>dni programu</span></div><div><b>2</b><span>równoległe agendy</span></div><div><b>${nPeople}</b><span>prelegentów i panelistów</span></div><div><b>${nProg}</b><span>punktów programu</span></div></div>
+   <div class="two">
+     <div class="box"><span class="tag">Agenda biznesowa</span><h3 style="margin-top:8px">Strategia i skala</h3><p>Debaty właścicieli, makroekonomia i decyzje zarządcze.</p>
+       <ul><li>prof. Witold Orłowski o otoczeniu biznesu w 2027</li><li>Debata o zmianach właścicielskich</li><li>Think Tank The Company</li><li>Spotkania 1 na 1 w piątek i sobotę</li></ul>
+       <button class="link" data-go="agenda" data-set-track="b">Zobacz agendę biznesową →</button></div>
+     <div class="box"><span class="tag r">Akademia Rozwoju</span><h3 style="margin-top:8px">Doświadczenie i inspiracja</h3><p>Wystąpienia, rzemiosło i masterclassy.</p>
+       <ul><li>The Art of Heritage: Koniaków × Moët Hennessy</li><li>Robert Korzeniowski i Dominika Żak</li><li>Scent Lab by MO61</li><li>Wspólne panele z agendą biznesową</li></ul>
+       <button class="link" data-go="agenda" data-set-track="a">Zobacz Akademię Rozwoju →</button></div>
+   </div>
+   <div class="box"><p class="h5">Wspólne punkty obu agend</p><div style="font-size:14px;display:grid;gap:4px">
+     ${S.filter(x=>shared(x)&&x.k==='prog'&&x.people).map(x=>`<div><span style="color:var(--red);font-variant-numeric:tabular-nums">${DAYN[x.d].slice(0,2)} ${x.s}</span> · <b style="font-weight:500">${esc(x.title)}</b></div>`).join('')}</div></div>
+  </div>`;
+}
+
+const V={agenda:vAgenda,moja:vMoja,prelegenci:vPrelegenci,aktywnosci:vAkt,'o-evencie':vAbout};
+const view=document.getElementById('view');
+function render(keepFocus){
+  document.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-selected',b.dataset.v===st.view));
+  view.innerHTML=V[st.view]();
+  const mc=document.getElementById('mycount');mc.hidden=!fav.size;mc.textContent=fav.size;
+  if(keepFocus){const q=document.getElementById('q');if(q){q.focus();q.setSelectionRange(q.value.length,q.value.length)}}
+}
+function go(v,scrollTop=true){st.view=v;try{history.replaceState(null,'','#'+v)}catch(e){}render();if(scrollTop)window.scrollTo({top:document.querySelector('.tabs').offsetTop,behavior:'smooth'})}
+let tt;function toast(m){const t=document.getElementById('toast');t.textContent=m;t.hidden=false;clearTimeout(tt);tt=setTimeout(()=>t.hidden=true,1800)}
+
+document.querySelector('.tabs').addEventListener('click',e=>{const b=e.target.closest('.tab');if(b)go(b.dataset.v)});
+view.addEventListener('input',e=>{if(e.target.id==='q'){st.q=e.target.value;render(true)}});
+view.addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;const d=b.dataset;
+  if(d.fav){fav.has(d.fav)?(fav.delete(d.fav),toast('Usunięto z mojej agendy')):(fav.add(d.fav),toast('Dodano do mojej agendy'));save();render();return}
+  if(d.track){st.track=d.track;save();render();return}
+  if(d.day){st.day=+d.day;render();return}
+  if(d.role){st.role=d.role;render();return}
+  if(d.toggle){st.open=st.open===d.toggle?null:d.toggle;render();return}
+  if(d.act){st.open=ACTS[d.act].feats?d.act:null;go('aktywnosci',false);requestAnimationFrame(()=>document.getElementById('act-'+d.act)?.scrollIntoView({behavior:'smooth',block:'start'}));return}
+  if(d.person){st.q=d.person;st.role='all';go('prelegenci');return}
+  if(d.setTrack){st.track=d.setTrack;save()}
+  if(d.go){if(d.go==='agenda'&&!d.setTrack)st.day=6;go(d.go);return}
+  if(d.goto){const x=S.find(s=>s.id===d.goto);st.day=x.d;if(x.d!==8&&x.t.length===1)st.track=x.t;go('agenda',false);
+    requestAnimationFrame(()=>{const el=view.querySelector(`[data-fav="${d.goto}"]`)?.closest('.row');if(el){el.scrollIntoView({behavior:'smooth',block:'center'});const c=el.querySelector('.card');c.style.outline='2px solid var(--red)';setTimeout(()=>c.style.outline='',1600)}})}
+});
+
+// countdown to 6 Nov 2026 10:00 Warsaw (CET, UTC+1)
+const START=Date.UTC(2026,10,6,9,0),END=Date.UTC(2026,10,8,14,30);
+function tick(){const n=Date.now(),el=document.getElementById('count');
+  if(n>=END){el.innerHTML='<div><b>Dziękujemy</b><span>do zobaczenia</span></div>';return}
+  if(n>=START){el.innerHTML='<div><b>Trwa</b><span>Business Weekend</span></div>';return}
+  let s=Math.floor((START-n)/1000);const D=Math.floor(s/86400);s%=86400;const H=Math.floor(s/3600);s%=3600;const M=Math.floor(s/60);
+  el.innerHTML=[[D,'dni'],[H,'godz.'],[M,'min']].map(([v,l])=>`<div><b>${String(v).padStart(2,'0')}</b><span>${l}</span></div>`).join('')+'<div style="border-color:transparent;align-self:center"><span>do rejestracji<br>pt 6.11, 10:00</span></div>'}
+tick();setInterval(tick,30000);
+
+const h=(location.hash||'').slice(1);if(V[h])st.view=h;
+render();
+</script>
+
+</body></html>
